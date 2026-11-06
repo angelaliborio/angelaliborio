@@ -235,3 +235,14 @@ h2 { font-size: clamp(43px, 5vw, 68px); }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Botão flutuante de WhatsApp (celular e tablet) */
+.whatsapp-float { display: none; }
+@media (max-width: 900px) {
+  .whatsapp-float { position: fixed; z-index: 40; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); display: inline-flex; align-items: center; gap: 8px; padding: 13px 20px 13px 16px; border-radius: 999px; color: #fff; background: var(--coral-deep); font: 600 14px/1 var(--sans); text-decoration: none; box-shadow: 0 8px 22px rgba(44, 42, 42, .25); }
+  .whatsapp-float:hover { background: #923d31; }
+  .whatsapp-float:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .whatsapp-float svg { width: 20px; height: 20px; fill: currentColor; }
+  body.menu-open .whatsapp-float { display: none; }
+  .site-footer__note { margin-bottom: 64px; }
+}
